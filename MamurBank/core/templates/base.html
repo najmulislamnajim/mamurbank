@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="mamur bank" />
+        <title>
+            {% block head_title %}Mamur Bank {% endblock %}
+        </title>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+        {% block head_extra %}{% endblock %}
+
+        <style>
+            body {
+                background-image: url({% static './img/bg2.jpg' %});
+                background-size: cover; /* Adjust the size of the background image */
+                background-position: center; /* Center the background image */
+                background-repeat: no-repeat; /* Do not repeat the background image */
+            }
+
+            
+        </style>
+       
+        
+    </head>
+    <body >
+        {% include 'navbar.html' %}
+        {% block body %}
+            <div class="lg:container lg:mx-auto" id="main">
+                {% include 'messages.html' %}
+                {% block content %}
+                {% endblock %}
+            </div>
+        {% endblock%} 
+        {% block footer%}
+        {% endblock%}
+    </body>
+
+</html>
